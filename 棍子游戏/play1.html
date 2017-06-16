@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>英雄难过棍子关</title>
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="dataSourse.js"></script>
+  <script>
+//   $(function(){
+//       $(".btnClick").click(function(){
+//        var i=parseInt(Math.random()*20);
+//           var div=$("<div></div>");
+//           div.addClass("dialog");
+//          var p1=$("<p></p>");
+//        p1.html(infoDate.fail[i]);
+//          var p2=$("<p></p>");
+//          p2.addClass("dialog-btn");
+//        var a1=$("<a></a>");
+//        a1.addClass("play-again");
+//        a1.html("再玩一次");
+//        var a2=$("<a></a>");
+//        a2.html("退出");
+//        p2.append(a1);
+//        p2.append(a2);
+//        div.append(p1);
+//        div.append(p2);
+//        $(".container").after(div);
+//
+//       })
+//   });
+      $(function (){
+      //             $(".btnClick").click(infoData.failDialog);
+       function initValue(val){
+        var wellW= $(".well-box .well:eq("+val+")").width();
+        var wellL=parseInt($(".well-box .well:eq("+val+")").css("left"));
+        $(".stick").css("left",(wellW+wellL)+"px");
+        $(".man").css("left",(wellL+wellW-65)+"px");
+        $(".stick").width(0);
+        $(".stick").removeClass("stickDown");
+        $(".man img").removeClass("rotate");
+        type=true;
+        index=val;
+       }
+       initValue(0);
+       var type=true;
+       $(".btnClick").mousedown(function (){
+        if(type){
+         var contop=$(".container").offset().top;
+         $(".stick").animate({"width":contop+"px"},1000);
+        }
+       }).mouseup(function (){
+        $(".stick").stop();
+        $(".stick").addClass("stickDown");
+        if(type){
+         setTimeout(running,350);
+        }
+        type=false;
+       });
+       var index=0;
+       function running(){
+        $(".man img").attr("src","img/stick.gif");
+        var stickWidth=$(".stick").width();
+        var stickLeft=parseInt($(".stick").css("left"));
+        var wellWidth=$(".well-box .well:eq("+index+")").width();
+        var wellLeft=parseInt($(".well-box .well:eq("+index+")").css("left"));
+        var nWellLeft=parseInt($(".well-box .well:eq("+index+")").next().css("left"));
+        var nWellWidth=$(".well-box .well:eq("+index+")").next().width();
+        $(".man").animate({"left":(stickLeft+stickWidth-32)+"px"},1000,function (){
+         $(".man img").attr("src","img/stick_stand.png");
+         if(stickWidth<nWellLeft-wellWidth-wellLeft
+                     ||
+                     stickWidth>nWellLeft-wellWidth-wellLeft+nWellWidth
+         ){
+          $(".man img").addClass("rotate");
+          setTimeout(fail,350);
+         }else{
+          index++;
+          initValue(index);
+          $(".container").animate({"left":(0-nWellLeft)+"px"},1000);
+          if(index==$(".well-box .well").length-1){
+           alert("成功");
+          }
+         }
+        });
+       }
+       function fail(){
+        alert("失败");
+        initValue(0);
+       }
+       function createWell(sum){
+        var left=0;
+        var width=100;
+        var sep=100;
+        for(var i=0;i<sum;i++){
+         var div=$("<div></div>");
+         $(".well-box").append(div);
+         div.addClass("well");
+         $(".well").css({"left":left+"xp","width":width+"px"});
+         left+=width+sep;
+
+        }
+
+       }
+       createWell(9);
+      });
+
+
+  </script>
+
+ </head>
+ <body class="bg2">
+	<div class="set-text">
+		<h2 class="play-title">关卡1</h2>
+		<a href="index.html">主菜单</a>
+	</div>
+	<a href="javascript:void(0);" class="btnClick"></a>
+	<div class="container">
+		<div class="stick"></div>
+		<div class="man"><img src="img/stick_stand.png"/></div>
+		<div class="well-box">
+         <!--<div class="well" css="left:0px;width:100px;"></div>-->
+         <!--<div class="well" css="left:200px;width:60px;"></div>-->
+         <!--<div class="well" css="left:600px;width:80px;"></div>-->
+         <!--<div class="well" css="left:900px;width:80px;"></div>-->
+         <!--<div class="well" css="left:1200px;width:80px;"></div>-->
+		</div>
+	</div>
+ </body>
+</html>
