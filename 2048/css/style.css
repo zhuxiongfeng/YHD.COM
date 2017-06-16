@@ -1,0 +1,116 @@
+*{
+    margin:0;padding:0;
+}
+body{
+    background: url("../images/14.jpg") no-repeat;
+}
+.main{
+    width:500px;
+    height:500px;
+    /*border:1px solid #b9e6e0;*/
+    margin:0 auto;
+    /*background: #a5bfe6;*/
+}
+.main div{
+    width:100px;
+    height:100px;
+    margin:10px 10px;
+    float:left;
+    border:1px solid khaki;
+    text-align: center;
+}
+.title{
+    width: 469px;
+    overflow: hidden;
+    margin:5px auto;
+}
+#start{
+    width: 111px;
+    height:26px;
+    text-decoration: none;
+    display: inline-block;
+    /*margin-left: 461px;*/
+    /*margin-top:10px;*/
+    font-size: 20px;
+    font-family: "Microsoft YaHei", SimHei, "微软雅黑";
+    color:khaki;
+    float:left;
+    margin-left: 31px;
+    /*background:url("../img/2.jpg") ;*/
+}
+#replay{
+    width: 100px;
+    height: 26px;
+    font-size:20px;
+    font-family: "Microsoft YaHei", SimHei, "微软雅黑";
+    text-decoration: none;
+    color:khaki;
+    float:left;
+    /*position:absolute;*/
+    /*left:600px;*/
+    /*top:10px;*/
+}
+span{
+    width: 42px;
+    height: 26px;
+    font-size:20px;
+    font-family: "Microsoft YaHei", SimHei, "微软雅黑";
+    text-decoration: none;
+    color:khaki;
+    float:left;
+    /*position:absolute;*/
+    /*left:703px;*/
+    /*top:10px;*/
+}
+#score{
+    width: 39px;
+    height:21px;
+    /*border:solid 1px khaki;*/
+    display:inline-block;
+    /*position:absolute;*/
+    /*top:13px;*/
+    /*left:745px;*/
+    background: khaki;
+    float:left;
+    margin-top:4px;
+    padding-left: 25px;
+    font-family: "Microsoft YaHei", SimHei, "微软雅黑";
+}
+#logo{
+    width:150px;
+    height:80px;
+    font-size: 136px;
+    color:khaki;
+    position:absolute;
+    right:142px;
+    top:15px;
+}
+.dialog{
+    width:228px;
+    height:70px;
+    position:fixed;
+    left:451px;
+    top:232px;
+    background: khaki;
+    /*margin:50px auto;*/
+}
+.dialog p{
+    margin:18px 0;
+    display: inline-block;
+    font-size: 23px;
+    font-family: "Microsoft YaHei", SimHei, "微软雅黑";
+}
+.dialog .p{
+    margin-right: 30px;
+    margin-left: 6px;
+}
+.bg2,.bg4{background:url("../images/3.jpg");font-size: 76px;}
+.bg8{background: url("../images/9.jpg");font-size:80px;}
+.bg16{background: url("../images/4.jpg");font-size:80px;}
+.bg32{background: url("../images/5.jpg");font-size:80px;}
+.bg64{background: url("../images/6.jpg");font-size:80px;}
+.bg128{background: url("../images/7.jpg");font-size:60px;}
+.bg256{background: url("../images/8.jpg");font-size:60px;}
+.bg512{background: url("../images/1.jpg");font-size:60px;}
+.bg1024{background: url("../images/10.jpg");font-size:40px;}
+.bg2048{background: url("../images/11.jpg");font-size:40px;}
