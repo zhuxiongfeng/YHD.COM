@@ -1,0 +1,592 @@
+*{
+    margin: 0; padding: 0;
+    font:13px "microsoft yahei";
+}
+.z{float:left;}
+.y{float:right;}
+.page{
+    width:1423px;
+    height: auto;
+}
+.page .header{
+    height: 34px;
+    background: #f9f9f9;
+
+}
+.page .header .center{
+    width: 1231px;
+    height: 34px;
+
+    margin: 0 auto;
+}
+.page .header .center .left{
+    float:left;
+    line-height: 34px;
+}
+.page .header .center .left span a{
+    text-decoration: none;
+    color:blue;
+
+}
+.page .header .center .right>ul>li{
+    float:right;
+    list-style: none;
+    line-height: 16px;
+    width: 74px;
+    text-align: center;
+    border-right: 1px darkgrey solid ;
+    margin-top: 9px;
+    background: url("img/indexhead_sprite.png") -222px -256px no-repeat;
+}
+
+#menu1{
+    display: none;
+}
+#ul{
+    /*position: absolute;*/
+    /*left:1066px;*/
+    width: 209px;
+    height: 88px;
+    border: 1px solid darkgrey;
+}
+#ul>li{
+    list-style: none;
+}
+#ul p{
+    margin-right: 10px;
+    line-height: 25px;
+}
+.page .header .center .right ul li a{
+    text-decoration: none;
+    color:black;
+}
+.page .header .center .right ul li .menu{
+    position:absolute;
+
+    /*width: 100px;*/
+    display: none;
+}
+.page .header .center .right ul li:hover .menu{
+    display: block;
+}
+.page .header .center .right>ul>li:hover{
+    background: url("img/indexhead_sprite.png") -222px -287px no-repeat;
+
+}
+.page .header .center .right ul li a:hover{
+    color:red;
+}
+
+#li3 li{
+    list-style: none;
+    margin-top: 5px;
+}
+#li3>.menu{
+    padding-top:20px;
+    position:absolute;
+    top:7px;
+    left:1102px;
+    border: 1px darkgrey solid;
+    width: 74px;
+}
+
+#li9 p{
+    margin-top: 5px;
+}
+
+#li9 .menu{
+    padding-top:20px;
+    position:absolute;
+    top:7px;
+    left:878px;
+    border:1px solid darkgrey;
+    width:73px ;
+}
+#li8 p{
+     margin-top: 5px;
+ }
+#li8 .menu{
+    padding-top:20px;
+    position:absolute;
+    top:7px;
+    left:952px;
+    border:1px solid darkgrey;
+    width: 74px;
+}
+.page .search .center{
+    width: 1231px;
+    height: 131px;
+
+    margin: 0 auto;
+
+}
+.page .search .center .left{
+    width: 88px;
+
+    margin:30px 0 0 0;
+}
+.page .search .center .right{
+    width: 525px;
+    height: 53px;
+
+    margin:42px 0 10px 177px;
+
+}
+.page .search .center .right a{
+    text-decoration: none;
+    color:black;
+}
+.page .search .center .right a:hover{
+    color:red;
+}
+.page .search .center .right .shangping{
+    width: 81px;
+    height: 33px;
+    font-size: 20px;
+    line-height: 33px;
+    padding-left: 10px;
+    border-left:2px red solid;
+    border-bottom:2px red solid;
+    border-top: 2px red solid;
+    border-right:1px lavenderblush solid ;
+    background: url("img/xia.png") 67px 8px no-repeat gainsboro;
+
+}
+.page .search .center .right .shangping:hover{
+    background: url("img/shang.png") 67px 8px no-repeat gainsboro;
+}
+.page .search .center .right .shangping li{
+    list-style: none;
+    font-size: 19px;
+    margin-left: 5px;
+    margin-top: 3px;
+
+}
+.page .search .center .right .shangping a{
+    font-size: 17px;
+}
+.page .search .center .right .shangping a:hover{
+    color:red;
+}
+.page .search .center .right .shangping .menu{
+    width: 94px;
+    height: 37px;
+    position: absolute;
+    left:361px;
+    top:112px;
+    background:gainsboro;
+    border-right:lavenderblush 1px solid ;
+    border-bottom:lavenderblush 1px solid ;
+    border-left:lavenderblush 1px solid ;
+    display: none;
+
+
+}
+
+
+.page .search .center .right .shangping:hover .menu{
+    display: block;
+}
+
+.page .search .center .right .shangping .menu>li{
+    position: absolute;
+    left:12px;
+}
+
+ #key{
+    width: 344px;
+    height: 33px;
+    border-bottom:2px red solid;
+    border-top: 2px red solid;
+}
+.page .search .center .right #sub{
+    width: 83px;
+    height: 37px;
+    background: red;
+    border:0;
+}
+.page .nav .center{
+    width: 1231px;
+    height: 38px;
+    margin:0 auto;
+
+}
+.page .nav .center .right{
+    margin-left: 36px;
+
+}
+
+.page .nav .center div >a{
+    text-decoration: none;
+    color:black;
+    line-height: 38px;
+    font-weight: 800;
+}
+.page .nav .center div #right1{
+    color:red;
+}
+.page .nav .center div #right2{
+    color:red;
+}
+.page .nav .center div #right3{
+    color:red;
+}
+
+
+.page .nav .center .left{
+    width: 201px;
+    height: 38px;
+    background: rgba(255,0,0,.8);
+
+
+}
+.page .nav .center .left .fen {
+
+    padding-left: 57px;
+
+}
+.page .nav .center .left .fen a{
+    line-height: 38px;
+    font-size: 16px;
+    color:white;
+    text-decoration: none;
+}
+.page .container-top{
+    width: 1423px;
+    height: 398px;
+    background-color: red;
+    border-top:2px red solid;
+    overflow: hidden;
+}
+.page .container-top .left{
+    width: 202px;
+    margin-left: 95px;
+    background:rgba(255,255,255,.2);
+    /*opacity: .5;*/
+    /*background: url("img/nav.png") no-repeat 16px 0px;*/
+
+}
+.page .container-top .left li{
+    margin-bottom: 8px;
+    overflow: hidden;
+    height: 26px;
+
+}
+.page .container-top .left li a{
+    font:10px  " simsun";
+    line-height: 26px;
+
+}
+.page .container-top .left li:hover{
+    padding-left: 5px;
+    background: rgba(0,0,0,.5);
+}
+.page .container-top .left li a:hover{
+    text-decoration: underline;
+}
+
+.page .container-top .left .shu{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 5px ;
+}
+.page .container-top .left .shu1{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -43px ;
+}
+.page .container-top .left .shu2{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -86px  ;
+}
+.page .container-top .left .shu3{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -127px ;
+}
+.page .container-top .left .shu4{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -170px ;
+}
+.page .container-top .left .shu5{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -207px ;
+}
+.page .container-top .left .shu6{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -250px ;
+}
+.page .container-top .left .shu7{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -289px ;
+}
+.page .container-top .left .shu8{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -330px ;
+}
+.page .container-top .left .shu9{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -370px ;
+}
+.page .container-top .left .shu10{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -405px ;
+}
+.page .container-top .left .shu11{
+    width: 22px;
+    height: 25px;
+
+    margin-left: 5px;
+    background: url("img/nav.png") no-repeat 0 -445px ;
+}
+
+.page .container-top .left li p{
+    color:white;
+    margin-left: 5px;
+}
+.page .container-top .left a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.page .container-top .right{
+    width: 287px;
+    height: 398px;
+    background: white;
+}
+.page .container-top .right .top1{
+    height: 72px;
+}
+.page .container-top .right .top2{
+    height: 41px;
+    border-bottom: 1px solid  navajowhite;
+}
+.page .container-top .right .top2 div{
+    margin-left: 35px;
+}
+.page .container-top .right .top2 div>a{
+    text-decoration: none;
+    color:black
+}
+.page .container-top .right .top1 div{
+    width: 50px;
+    margin-left: 35px;
+    margin-top: 14px;
+}
+.page .container-top .right .center{
+
+    height: 100px;
+    border-bottom: 1px  navajowhite solid;
+}
+.page .container-top .right .center div{
+    margin-top: 15px;
+    margin-left: 21px;
+}
+.page .container-top .right .center div>a{
+    text-decoration: none;
+    color:black;
+}
+.page .container-top .right .center div>a:hover{
+    color: red;
+}
+.page .container-top .right .bottom{
+
+}
+.page .container-top .right .bottom .bottom1{
+    height: 37px;
+}
+.page .container-top .right .bottom .bottom1 div{
+    margin-left: 38px;
+}
+.page .container-top .right .bottom .bottom1 div a{
+    text-decoration: none;
+    color:black;
+    font-size: 14px;
+}
+.page .title1{
+    width: 1231px;
+    height: 59px;
+
+    margin:0 auto;
+}
+.page .title1 div{
+    margin-top: 32px;
+    padding-left:8px;
+    padding-right: 8px;
+    height: 18px;
+    border-right:1px black solid;
+
+}
+.page .title1 div>a{
+    text-decoration: none;
+    color:black;
+}
+.page .title1 div>a:hover{
+    color:red;
+}
+#s{
+    color:red;
+    font-size: 18px;
+}
+.page .container-center{
+    width: 1231px;
+    height:361px;
+    margin:0 auto;
+    border-top: 2px red solid;
+}
+.page .container-center div>.top{
+    width: 142px;
+    overflow: hidden;
+}
+.page .container-center .top div{
+    margin-top: 10px;
+}
+
+.page .container-center div a{
+    text-decoration: none;
+    color:black;
+
+}
+.page .container-center div a:hover{
+    color:red;
+}
+.page .container-center>div{
+    margin-left: 34px;
+}
+
+.page .title2{
+    width: 1231px;
+    height:61px;
+
+    margin:0 auto;
+
+}
+.page .title2 div{
+    margin-top: 35px;
+    padding-left:8px;
+    padding-right: 8px;
+    height: 18px;
+    border-right:1px black solid;
+}
+.page .title2 div>a{
+    text-decoration: none;
+    color:black;
+}
+.page .title2 div>a:hover{
+    color:red;
+}
+#g{
+    color:olivedrab;
+    font-size: 18px;
+}
+.page .container-bottom{
+    width:1231px;
+    height:544px;
+    margin:0 auto;
+    border-top: 2px olivedrab solid;
+}
+.page .container-bottom>div{
+    margin-left: 22px;
+}
+.page .container-bottom div>.top{
+    width: 116px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.page .container-bottom div>.top div{
+    margin-top: 10px;
+}
+.page .container-bottom div a{
+    text-decoration: none;
+    color:black;
+}
+.page .container-bottom div a:hover{
+    color:red;
+}
+.page .footer{
+    width:1423px;
+    height:99px;
+    margin-top:28px;
+
+    overflow: hidden;
+}
+.page .footer .top{
+    width: 1024px;
+    height: 20px;
+    margin:17px auto 5px auto;
+
+}
+.page .footer .top div{
+    height:20px;
+    margin-left: 13px;
+    border-right: 1px black solid;
+    padding-right: 13px;
+
+}
+#k{border:0;}
+.page .footer .top div a{
+    line-height: 20px;
+    text-decoration: none;
+    color:black;
+}
+.page .footer .top div a:hover{
+    color:red;
+}
+.page .footer .center{
+    width: 717px;
+    height: 20px;
+
+    margin: 5px auto;
+}
+.page .footer .center div{
+    border-right: 1px solid black;
+    margin-left: 8px;
+    padding-right: 8px;
+}
+#h{
+    border:0;
+}
+.page .footer .center div a{
+    text-decoration: none;
+    color:black;
+}
+.page .footer .center div a:hover{
+    color: red;
+}
+.page .footer .bottom{
+    width: 355px;
+    height: 20px;
+    margin:5px auto;
+
+}
