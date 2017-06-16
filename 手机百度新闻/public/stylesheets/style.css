@@ -1,0 +1,77 @@
+*{
+  margin:0;
+  padding:0;
+}
+a{
+    text-decoration: none;
+}
+.a{
+    text-decoration: underline;
+}
+li{
+    list-style: none;
+}
+.z{
+    float:left;
+}
+.y{
+    float:right;
+}
+ .wrap{
+     width:100%;
+ }
+ .header{
+     height:49px;
+     background: url("../images/bg-news-logo_344ce44.png") #3e98f0 center 10px no-repeat;
+     background-size:65px;
+     overflow: hidden;
+     border-bottom: 1px solid #5dabf0;
+ }
+ .header a{
+     display: block;
+     margin-top: 10px;
+ }
+ .header a:nth-child(3){
+     margin-right: 10px;
+ }
+
+.iconfont{
+    font-size: 25px;
+    color:white;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.nav{
+    height: 57px;
+    background:#3e98f0;
+}
+.nav ul li{
+    float:left;
+    margin:3px 15px;
+    /*color:white;*/
+}
+.nav ul li a{
+    color:white;
+}
+
+.content img{
+    width: 95px;
+    height:70px;
+    /*float:left;*/
+
+}
+
+.content li>div:nth-child(2){
+    width: 220px;
+}
+.content li::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.content li{
+    border-bottom: 1px solid #f8f8f8;
+}
+.bg{
+    background:#f0f0f0;
+}

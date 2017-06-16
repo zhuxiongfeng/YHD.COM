@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title> 百度新闻后台管理器 </title>
+
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrap">
+    <div class="panel panel-default">
+        <div class="panel-body bg">
+            百度新闻后台管理器
+        </div>
+    </div>
+    <div class="panel col-md-6 col-xs-6 panel-default z">
+        <div class="panel-heading">
+            <h3 class="panel-title">新闻发布器</h3>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="title">新闻标题</label>
+                    <input type="email" class="form-control" id="title" placeholder="请输入新闻标题">
+                </div>
+                <div class="form-group">
+                    <label for="content">新闻正文</label>
+                    <input type="email" class="form-control" id="content" placeholder="请输入正文">
+                </div>
+                <div class="form-group">
+                    <label for="adress">新闻图片地址</label>
+                    <input type="email" class="form-control" id="adress" placeholder="请输入新闻图片地址">
+                </div>
+                <div class="form-group">
+                    <label for="source">新闻来源</label>
+                    <input type="email" class="form-control" id="source" placeholder="请输入新闻来源">
+                </div>
+                <div class="form-group">
+                    <label for="date">新闻日期</label>
+                    <input type="email" class="form-control" id="date" placeholder="2017/4/5">
+                </div>
+                <label for="tag">新闻标签</label>
+                <select class="form-control" id="tag">
+                    <option>推荐</option>
+                    <option>百家</option>
+                    <option>本地</option>
+                    <option>图片</option>
+                    <option>娱乐</option>
+                </select>
+
+                <button type="submit" class="btn " id="submit" style="margin-top: 34px">提交</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default col-md-6 col-xs-6 y">
+        <div class="panel-heading">
+            <h3 class="panel-title">新闻列表</h3>
+        </div>
+        <div class="panel-body ">
+            <table class="table  ">
+                <thead>
+                    <tr>
+                        <td>新闻编号</td>
+                        <td>新闻标题</td>
+                        <td>新闻时间</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+               <tbody id="tbody">
+
+               </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+    $("#submit").click(function(e){
+        e.preventDefault();
+//        var a=$('#content').val()
+//        console.log(a)
+        $.ajax({
+            url:'/addnews',
+            type:'post',
+            data:{
+                    title:$('#title').val(),
+                    content:$('#content').val(),
+                    adress:$('#adress').val(),
+                    source:$('#source').val(),
+                    date:$('#date').val(),
+                    tag:$('#tag').val()
+            },
+            success:function(data){
+                if(data.status=='ok'){
+                    console.log(data.message)
+                }
+
+            },
+            error:function(err){
+                console.log(err);
+            }
+        })
+        $.ajax({
+            url:'/gettable',
+            type:'get',
+            success:function(data){
+//                console.log(data)
+                $('tbody').empty();
+                for(var i=0; i<data.length;i++){
+                    $('<tr></tr>').addClass("tr"+i).appendTo("tbody")
+                    $('<td></td>').text(data[i].id).appendTo(".tr"+i)
+                    $('<td></td>').text(data[i].title).appendTo(".tr"+i)
+                    $('<td></td>').text(data[i].date).appendTo(".tr"+i)
+                    $('<td><button>删除</button></td>') .appendTo(".tr"+i)
+                }
+            }
+
+        })
+
+    })
+
+
+    $.ajax({
+        url:'/gettable',
+        type:'get',
+        success:function(data){
+            console.log(data)
+            for(var i=0; i<data.length;i++){
+                $('<tr></tr>').addClass("tr"+i).appendTo("tbody")
+                $('<td></td>').text(data[i].id).appendTo(".tr"+i)
+                $('<td></td>').text(data[i].title).appendTo(".tr"+i)
+                $('<td></td>').text(data[i].date).appendTo(".tr"+i)
+                $('<td><button>删除</button></td>').appendTo(".tr"+i)
+            }
+        }
+
+    })
+
+//    $('button').click(function(){
+//        $(this).parent().parent().remove()
+//    })
+
+        $('#tbody').on('click','button',function(){
+            $(this).parent().parent().remove()
+        })
+
+    $('#tbody').on('click','button',function(){
+        $.ajax({
+            url:'/deleterow',
+            type:'post',
+            data:{
+                id:$(this).parent().prev().prev().prev().text()
+
+            }
+        })
+//        console.log($(this).parent().prev().prev().prev().text())
+    })
+    </script>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="javascripts/bootstrap.min.js"></script>
+</body>
+</html>

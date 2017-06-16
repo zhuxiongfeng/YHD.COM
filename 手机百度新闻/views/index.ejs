@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>百度新闻</title>
+    <link rel="stylesheet" href="./fonts/iconfont.css"/>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <div class="wrap">
+    <div class="header">
+        <a href="https://m.baidu.com/" class="z"><i class="iconfont">&#xe605;</i></a>
+        <a href=" " class="z"><i class="iconfont">&#xe61e;</i></a>
+        <a href=" " class="y"><i class="iconfont">&#xe68c;</i></a>
+        <a href=" " class="y"><i class="iconfont">&#xe611;</i></a>
+    </div>
+    <div class="nav">
+        <ul id="ul">
+            <li id="tui"><a href="javascript:void(0); ">推荐</a></li>
+            <li id="bai"><a href="javascript:void(0); " >百家</a></li>
+            <li id="ben"><a href="javascript:void(0);">本地</a></li>
+            <li><a href="javascript:void(0);">图片</a></li>
+            <li><a href="javascript:void(0);">娱乐</a></li>
+            <li><a href="javascript:void(0);">社会</a></li>
+            <li><a href="javascript:void(0);">军事</a></li>
+            <li><a href="javascript:void(0);">女人</a></li>
+            <li><a href="javascript:void(0);">搞笑</a></li>
+            <li><a href="javascript:void(0);">更多</a></li>
+        </ul>
+    </div>
+      <div class="content">
+            <!--<div class="img"></div>-->
+            <!--<div class="comment"></div>-->
+      </div>
+
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript">
+      $(function(){
+          $(".content").empty();
+          $.ajax({
+              url:"/gettui",
+              type:"get",
+              success:function(data){
+//                  console.log(data);
+                  for(var i=0;i<data.length;i++){
+                      $('<h4></h4>').text(data[i].content).appendTo('.content')
+                      $('<img>').attr('src',data[i].adress).appendTo('.content')
+
+                  }
+              }
+          })
+          $('#tui').click(function(){
+              $(".content").empty();
+              $.ajax({
+                  url:"/gettui",
+                  type:"get",
+                  success:function(data){
+//                  console.log(data);
+                      for(var i=0;i<data.length;i++){
+                          $('<h4></h4>').text(data[i].content).appendTo('.content')
+                          $('<img>').attr('src',data[i].adress).appendTo('.content')
+
+                      }
+                  }
+              })
+          })
+
+          $("#ul").on("click","#bai",function(e){
+//          e.preventDefault()
+              $(".content").empty();
+              $.ajax({
+                  url:"/getbai",
+                  type:"get",
+                  success:function(data){
+//                      console.log(data);
+                      for(var i=0;i<data.length;i++){
+                          $('<h4></h4>').text(data[i].content).appendTo('.content')
+                          $('<img>').attr('src',data[i].adress).appendTo('.content')
+
+                      }
+
+
+                  }
+              })
+          })
+
+          $("#ul").on("click","#ben",function(e){
+              $(".content").empty();
+          })
+
+      })
+
+
+
+
+
+
+  </script>
+  </body>
+</html>
